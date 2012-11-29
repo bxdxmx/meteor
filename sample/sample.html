@@ -1,0 +1,14 @@
+<head>
+  <title>sample</title>
+</head>
+
+<body>
+  {{> states}}
+</body>
+
+<template name="states">
+  {{#if stateIs "index"}}{{> index}}{{/if}}
+  {{#if stateIs "show"}}{{> show}}{{/if}}
+  {{#if stateIs "edit"}}{{> edit}}{{/if}}
+  {{#if stateIs "newUser"}}{{> newUser}}{{/if}}
+</template>

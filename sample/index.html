@@ -1,0 +1,32 @@
+<template name="index">
+  <h1>Listing users</h1>
+  
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    {{> users}}
+  </table>
+  <br />
+  <a href="/user/new" id="newUser">New User</a>
+</template>
+
+<template name="users">
+  {{#each users}}
+    {{> user}}
+  {{/each}}
+</template>
+
+<template name="user">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{email}}</td>
+    <td><a href="/user/{{id}}">Show</a></td>
+    <td><a href="/user/{{id}}/edit">Edit</a></td>
+    <td><a href="/user/{{id}}/destroy" onClick="javascript:return confirm('Are you sure?')">Destroy</a></td>
+  </tr>
+</template>

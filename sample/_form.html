@@ -1,0 +1,28 @@
+<template name="_form">
+  {{#if errors}}
+    <div id="error_explanation">
+      <h2>{{errors.length}}prohibited this user from being saved:</h2>
+      <ul>
+        {{#each errors}}
+        {{/each}}
+      </ul>
+    </div>  
+  {{/if}}
+  
+  <div class="field">
+    <label for="user_name">Name</label><br/>
+    <input type="text" id="user_name" size="30" value="{{#if user}}{{user.name}}{{/if}}"/>
+  </div>
+  <div class="field">
+    <label for="user_email">Email</label><br/>
+    <input type="text" id="user_email" size="30" value="{{#if user}}{{user.email}}{{/if}}"/>
+  </div>
+  <div class="actions">
+    {{#if stateIs "newUser"}}
+    <button id="create">Create User</button>
+    {{else}}
+    <button id="update">Update User</button>
+    {{/if}}
+  </div>
+</template>
+

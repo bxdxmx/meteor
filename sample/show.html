@@ -1,0 +1,17 @@
+<template name="show">
+  {{#constant}}
+  <p id="notice">{{#if notice}}{{notice}}{{/if}}</p>
+  {{/constant}}
+  <p>
+    <b>Name:</b>
+    {{user.name}}
+  </p>
+  <p>
+    <b>Email:</b>
+    {{user.email}}
+  </p>
+  
+  <a href="/user/{{user.id}}/edit">Edit</a> |
+  <a href="/user">Back</a>
+</template>
+
